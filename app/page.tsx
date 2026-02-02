@@ -1,7 +1,10 @@
+'use client';
 import Header from "@/components/Header";
-import Image from "next/image";
+import { WalletConnect } from "@/components/WalletConnect";
+import { useWallet } from '@/hooks/useWallet';
 
 export default function Home() {
+  const wallet = useWallet();
   return (
     <main className="min-h-screen flex flex-col grid-bg">
       <Header/>
@@ -21,7 +24,17 @@ export default function Home() {
                 No rate limits. No social verification. No waiting. Get instant test tokens 
                 through Yellow Network's ERC-7824 state channels.
               </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4"></div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <WalletConnect
+                    address={wallet.address}
+                    isConnected={wallet.isConnected}
+                    isConnecting={wallet.isConnecting}
+                    hasMetaMask={wallet.hasMetaMask}
+                    error={wallet.error}
+                    onConnect={wallet.connect}
+                    onDisconnect={wallet.disconnect}
+                />
+              </div>
             </div>
             {/* right */}
           </div>
