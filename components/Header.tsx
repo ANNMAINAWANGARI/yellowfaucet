@@ -1,7 +1,11 @@
+'use client'
 import { Zap } from 'lucide-react'
+import { WalletConnect } from './WalletConnect'
+import { useWallet } from '@/hooks/useWallet';
 
 
 const Header = () => {
+  const wallet = useWallet();
   return (
     <header className="border-b border-border/50 backdrop-blur-md bg-background/80 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -17,6 +21,17 @@ const Header = () => {
                   <h1 className="font-bold text-xl gradient-text">YellowFaucet</h1>
                   <p className="text-xs text-muted-foreground">Powered by Yellow Network</p>
                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <WalletConnect
+                    address={wallet.address}
+                    isConnected={wallet.isConnected}
+                    isConnecting={wallet.isConnecting}
+                    hasMetaMask={wallet.hasMetaMask}
+                    error={wallet.error}
+                    onConnect={wallet.connect}
+                    onDisconnect={wallet.disconnect}
+                  />
                 </div>
             </div>
         </div>

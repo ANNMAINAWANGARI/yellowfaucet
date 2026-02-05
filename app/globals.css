@@ -312,11 +312,14 @@
   /* Token Card Hover */
   .token-card {
     @apply transition-all duration-300;
+    border: 1px solid oklch(0.75 0.15 195 / 0.3)
   }
+
 
   .token-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-glow);
+    border-color: oklch(0.75 0.15 195 / 0.6);
   }
 
   /* Button Gradient */
