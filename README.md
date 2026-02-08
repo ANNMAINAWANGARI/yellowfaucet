@@ -174,8 +174,7 @@ Main function that executes the faucet flow.
 1. **Hardcoded Faucet Key**: The faucet private key should be stored in environment variables
 2. **No Rate Limiting**: Users could potentially request multiple times
 3. **No Error Handling**: Network failures may cause silent errors
-4. **Single Signature**: User wallet doesn't co-sign channel closure
-5. **Browser Dependency**: Requires `window.ethereum` (MetaMask)
+4. **Browser Dependency**: Requires `window.ethereum` (MetaMask)
 
 ### Production Recommendations
 
@@ -262,22 +261,13 @@ Contributions are welcome! Please ensure:
 3. Include tests for new features
 4. Update documentation
 
-## License
-
-MIT License - see LICENSE file for details
-
 ## Resources
 
-- [Yellow Network Documentation](https://docs.yellow.com)
-- [Nitro Protocol Specification](https://erc7824.org)
+- [Yellow Network Documentation](https://www.yellow.org/)
+- [Nitro Protocol Specification](https://erc7824.org/)
 - [Viem Documentation](https://viem.sh)
-- [State Channels Explained](https://ethereum.org/en/developers/docs/scaling/state-channels/)
+- [State Channels Explained](https://www.yellow.org/build)
 
-## Support
-
-- GitHub Issues: [Report bugs or request features]
-- Discord: [Yellow Network Community]
-- Email: support@yellow.com
 
 ## Changelog
 
