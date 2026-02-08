@@ -1,3 +1,4 @@
+import { Hex } from "viem";
 
 export interface WalletState {
   address: string | null;
@@ -8,7 +9,11 @@ export interface WalletState {
 }
 
 
-export type MessageSigner = (message: string) => Promise<string>;
+ export type MessageSigner = (message: string) => Promise<string>;
+
+
+
+
 
 export interface Token {
   id: string;

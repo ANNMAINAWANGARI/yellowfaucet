@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { Hex } from 'viem';
 import { WalletState, MessageSigner } from '@/types/faucet';
 
+
 declare global {
   interface Window {
     ethereum?: {

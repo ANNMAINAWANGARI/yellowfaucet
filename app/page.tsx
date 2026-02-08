@@ -2,7 +2,9 @@
 import Header from "@/components/Header";
 import { TokenSelector } from "@/components/TokenSelector";
 import { WalletConnect } from "@/components/WalletConnect";
+import { createFaucetChannel } from "@/config/facet";
 import { SUPPORTED_TOKENS } from "@/config/tokens";
+import { YellowFaucet } from "@/config/yellowfaucet";
 import { useWallet } from '@/hooks/useWallet';
 import { Token } from "@/types/faucet";
 import { useState } from "react";
@@ -13,7 +15,10 @@ export default function Home() {
   const [amount, setAmount] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   
-  const handleRequest = async () => {}
+  const handleRequest = async () => {
+    YellowFaucet(wallet.address as `0x${string}`);
+    
+  }
   return (
     <main className="min-h-screen flex flex-col grid-bg">
       <Header/>
